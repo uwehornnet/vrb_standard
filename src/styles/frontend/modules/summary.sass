@@ -1,0 +1,74 @@
+.vrb__summary
+    display: block
+    width: 100%
+    background: $white
+        
+    &--header
+        font-size: 1.2rem
+        background: $light
+        padding: 1rem
+        strong
+            font-size: 1.2rem
+            display: block
+    
+        small
+            display: block
+        
+    &--body
+        padding: 1rem
+        @media(min-width: 1024px)
+            max-height: calc(100vh - 12rem)
+            overflow-y: scroll
+            -ms-overflow-style: none
+            scrollbar-width: none
+            overflow: -moz-scrollbars-none
+            &::-webkit-scrollbar
+                display: none
+        
+    &--period
+        margin-top: .4rem
+        padding: .4rem
+        
+    &--participants
+        margin-top: .4rem
+        padding: .4rem
+    
+    &--billing
+        margin-top: .4rem
+        padding: .4rem
+    
+    &--message
+        margin-top: .4rem
+        padding: .4rem .4rem .8rem .4rem
+        strong
+            display: block
+        textarea
+            display: block
+            width: 100%
+            min-height: 120px
+            border: none
+            border-radius: 4px
+            margin-top: .4rem
+            padding: .4rem
+            
+    &--footer
+        padding: 16px
+        display: flex
+        justify-content: flex-end
+        label
+            font-size: 16px
+            line-height: 16px
+            display: block
+            margin-bottom: .4rem
+            
+            &.error
+                color: $red
+            
+            input
+                margin-right: .4rem
+            
+        
+        button
+            margin-left: 16px
+            @extend .vrb-button
+                

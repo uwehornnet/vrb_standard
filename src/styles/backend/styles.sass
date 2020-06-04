@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+
+$brand: #4B60BC
+$white: #fff
+$whitesmoke: whitesmoke
+$lightgray: lightgray
+$lightblue: lightskyblue
+$darkblue: darken($lightblue, 20)
+
+#vabs
+	.vabs
+		display: block
+		margin-right: 20px
+		&__card
+			margin-top: 20px
+			display: block
+			width: 100%
+			border: 1px solid $lightgray
+			border-radius: 4px
+			overflow: hidden
+			background: $white
+			&--header
+				background: $whitesmoke
+				padding: 21px 35px
+				border-bottom: 1px solid $lightgray
+				img
+					display: block
+					margin: 0px auto
+					width: 100%
+					height: auto
+					max-width: 300px
+				.navigation
+					position: relative
+					bottom: -21px
+					&__links
+						display: flex
+						flex-direction: row
+						justify-content: center
+						&--link
+							padding: 7px
+							margin: 0px 7px
+							position: relative
+							cursor: pointer
+							&.active
+								font-weight: bold
+								color: $brand
+								&::after
+									content: ''
+									position: absolute
+									bottom: 0px
+									left: 0px
+									width: 100%
+									height: 2px
+									background: $brand
+			&--body
+				background: #ffffff
+				padding: 35px
+				position: relative
+				&.loading
+					.loader
+						position: absolute
+						top: 0px
+						left: 0px
+						width: 100%
+						height: 3px
+						background: $brand
+						animation: loading 10s ease infinite
+				.vabs__formlist
+					display: block
+					position: relative
+					min-height: 100vh
+					&--form
+						position: absolute
+						background: $white
+						height: 100vh
+						width: 100%
+						display: none
+						&.active
+							display: block
+						.form__flex
+							display: flex
+							flex-direction: row
+							justify-content: space-between
+							@media(max-width: 720px)
+								flex-direction: column
+							&--box
+								width: 33.33%
+								padding: 7px
+								@media(max-width: 720px)
+									width: 100%
+								p
+									font-weight: bold
+								textarea
+									width: 100%
+									display: block
+									min-height: 280px
+				.form
+					width: 100%
+					&__field
+						display: block
+						width: 100%
+						position: relative
+						margin-bottom: 14px
+						label
+							font-size: .9em
+							margin-right: 14px
+						.loading
+							display: inline-block
+							width: 14px
+							height: 14px
+							border-radius: 100%
+							border: 3px solid $brand
+							border-top-color: $brand
+							border-right-color: $brand
+							border-bottom-color: $brand
+							border-left-color: transparent
+							margin: 7px 0 0 14px
+							display: none
+							animation: rotate ease 1s infinite
+						&--input
+							width: 100%
+							display: block
+							padding: 7px
+							&.disabled
+								background: $whitesmoke
+						&--textarea
+							width: 100%
+							display: block
+							padding: 7px
+							min-height: 200px
+						&--submit
+							background: $brand
+							color: $white
+							appearance: none
+							border-radius: 3px
+							padding: 10px 14px
+							border: none
+							outline: none
+
+			&--stepper
+				.stepper
+					&__step
+						border-bottom: 1px solid $lightgray
+						overflow: hidden
+						transition: max-height .3s ease
+						.form__field
+							padding: 21px
+
+							label
+								margin-right: 14px
+							&--course
+								border-top: 1px solid $whitesmoke
+								padding: 14px
+							&.has-button-input
+								input
+									appearance: none
+									border: none
+									padding: 7px
+									width: 100%
+									max-width: 414px
+									background: $whitesmoke
+							div
+								border-top: 1px solid $lightgray
+								p
+									text-transform: uppercase
+								label
+									display: flex
+									flex-direction: row
+									align-items: center
+									margin: 7px 0px
+									input
+										margin-right: 14px
+									span
+										small
+											display: block
+											p
+												text-transform: none
+												margin: 0px
+												font-size: .75rem
+		.info
+			margin-top: 35px
+			background: rgba($brand, .2)
+			border: 1px solid rgba($brand, .4)
+			border-radius: 3px
+			padding: 14px
+			&__block
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				align-items: center
+				&--icon
+					padding-right: 14px
+					i
+						color: $brand
+						font-size: 2rem
+				&--body
+					flex: 1
+					p
+						margin-top: 21px
+						input[type="text"]
+							appearance: none
+							background: rgba($brand, .3)
+							border: none
+							padding: 14px
+							display: block
+							width: 100%
+							margin-top: 7px
+	.shortcodegenerator
+		display: block
+		strong
+			display: block
+			margin-bottom: 1rem
+			
+		label
+			margin-right: 2rem
+			
+		&__section
+			position: relative
+			padding: 1rem 0
+
+			.loader
+				position: absolute
+				height: 24px
+				width: 24px
+				border-radius: 50%
+				border: 2px solid $lightgray
+				border-top-color: transparent
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%), rotate(0deg)
+				animation: rotate .6s ease infinite
+			input[type="text"]
+				display: block
+				width: 100%
+				font-size: 1rem
+				padding: .4rem
+				margin: .4rem 0 0 0
+				
+			button
+				display: block
+				margin-top: 1rem
+				
+			&--lists
+				padding: .8rem
+				display: grid
+				grid-template-columns: repeat(4, 1fr)
+				grid-column-gap: 1rem
+				grid-row-gap: 1rem
+				label
+					display: block
+					margin: .4rem 0 0 0
+.vabs_update_notification
+	position: fixed
+	bottom: 0px
+	left: 0px
+	width: 100vw
+	height: auto
+	padding: 1rem
+	background: $whitesmoke
+	z-index: 9999
+
+@keyframes loading
+	0%
+		left: -100%
+	50%
+		left: 100%
+	100%
+		left: -100%
+
+@keyframes rotate
+	to
+		transform: rotate(360deg)

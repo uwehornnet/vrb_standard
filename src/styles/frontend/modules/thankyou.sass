@@ -1,0 +1,27 @@
+.vrb__thankyou
+    position: relative
+    width: 100%
+    &--title
+        margin-bottom: 1rem
+    &--table
+        width: 100%
+        border: 1px solid rgba($black, .1)
+        border-radius: 4px
+        
+        &-row
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            margin-bottom: .4rem
+            border-bottom: 1px solid rgba($black ,.1)
+            &:last-of-type
+                border-bottom: unset
+                margin-bottom: 0
+            
+        &-column
+            padding: .4rem
+            small
+                display: block
+                color: rgba($black, .4)
+            
+    &--footer
+        margin-top: 4rem
